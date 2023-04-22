@@ -30,9 +30,9 @@ export const useTabs = () => {
   }, [])
 
   useEffect(() => {
-    const removeNewTab = () => {
+    const removeNewTab = (newTab) => {
       chrome.tabs.query({ url: "chrome://newtab/" }).then((allTabs) => {
-        chrome.tabs.remove(allTabs.map((tab) => tab.id))
+        chrome.tabs.remove(allTabs.map((tab) => tab.id).filter(item=>item!==newTab.id))
       })
     }
     chrome.tabs.onCreated.addListener(removeNewTab)

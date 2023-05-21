@@ -1,28 +1,39 @@
 .container {
   display: flex;
-  width: 400px;
+  width: 100%;
   flex-direction: column;
   height: 100%;
   background: #292a2d;
-
 }
 
 .item {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   height: 40px;
+  width: 100%;
   border-bottom: 1px;
-  &:hover {
-    background: #3a3b3e;
-  }
   padding: 0px 10px;
   color: white;
   cursor: pointer;
   font-size: 16px;
-  display: flex;
-  align-items: center;
-  .icon {
-    margin-right: 4px;
-    width: 16px;
-    height: 16px;
-    object-fit: contain;
+  &:hover {
+    background: #3a3b3e;
   }
+  .content {
+    .icon {
+      margin-right: 4px;
+      width: 16px;
+      height: 16px;
+      object-fit: contain;
+    }
+  }
+
+  .actions {
+    cursor: pointer;
+  }
+
 }
+
+

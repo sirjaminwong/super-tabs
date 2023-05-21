@@ -24,11 +24,13 @@ const TabsPanel: React.FC<{}> = () => {
   return (
     <div className={style.container}>
       {filterTabs.map((tab) => (
-        <div className={style.item} key={tab.id}>
-          <div>
-            <img className={style.icon} src={tab.favIconUrl || defaultIcon} />  <span onClick={(handleOpen(tab))}>{tab.title}</span>
+        <div className={style.item} onClick={(handleOpen(tab))} key={tab.id}>
+          <div className={style.content}>
+            <img className={style.icon} src={tab.favIconUrl || defaultIcon} />  <span>{tab.title}</span>
           </div>
-          {/* <div>{tab.url}</div> */}
+          <div className={style.actions} onClick={() => {
+            chrome.tabs.remove(tab.id)
+          }}>x</div>
         </div>
       ))}
     </div>

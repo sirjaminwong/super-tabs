@@ -1,14 +1,10 @@
-
-import * as style from "./newtab.module.scss"
+import "~styles/reset.scss"
 import TabsPanel from "~components/tabs-panel/tabs-panel";
-import { tabManageUrl } from "~constants";
 
 function NewTabs() {
 
   return (
-    <div>
-      <TabsPanel />
-    </div>
+    <TabsPanel />
   )
 }
 

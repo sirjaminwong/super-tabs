@@ -1,4 +1,4 @@
-import "~styles/reset.scss"
+import "~styles/reset.css"
 import TabsPanel from "~components/tabs-panel/tabs-panel";
 
 function NewTabs() {
